@@ -1,0 +1,29 @@
+name: "Dashstream"
+description: "Add-on that exposes specific dashboards as RTSP streams"
+version: "1.0.0"
+slug: "dashstream"
+init: false
+arch: 
+  - aarch64
+  - amd64
+  - armv7
+startup: services
+host_network: true
+options: 
+  local_base_url: http://localhost:8123
+  username: dashstream
+  password: dashstream
+  dashboards:
+    - dash_url: energy
+      dash_stream: 1
+  rotation_every: 10
+  timezone: Europe/Copenhagen
+schema: 
+  local_base_url: str
+  username: str
+  password: password
+  dashboards:
+    - dash_url: str
+      dash_stream: int(1,)
+  rotation_every: int(10,)
+  timezone: str

@@ -1,0 +1,25 @@
+configuration:
+  local_base_url:
+    name: Local base URL
+    description: This should be fine for most. Only change this if you have changed the default port of Home Assistant from 8123 or if you are enforcing https, in which case you can still use the local url with https and certificate errors will be ignored.
+  username:
+    name: Username
+    description: Username for the user the plugin should use.
+  password:
+    name: Password
+    description: Password for the user the plugin should use.
+  dashboards:
+    name: Dashboards
+    description: Dashboards to be included in the stream(s). In dash_url specify the base url, e.g. http://homeassistant.local:8123/energy should be "energy". The dash_stream is the stream to include the dashboard in. If multiple dashboards use the same stream, they will rotate every Nth second as a slideshow.
+  dash_url:
+    name: Dashboard URL
+    description: Ignore the base url, e.g. http://homeassistant.local:8123/energy should be "energy"
+  dash_stream:
+    name: Stream number
+    description: Stream to include the dashboard in. If multiple dashboards use the same stream, they will rotate every Nth second as a slideshow.
+  rotation_every:
+    name: Rotation interval
+    description: If a stream have multiple dashboards, it should rotate every Nth second.
+  timezone:
+    name: Timezone
+    description: The timezone to use
