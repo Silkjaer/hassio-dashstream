@@ -1,6 +1,6 @@
 name: "Dashstream"
 description: "Add-on that exposes specific dashboards as RTSP streams"
-version: "1.0.0"
+version: "1.0.1"
 slug: "dashstream"
 init: false
 arch: 

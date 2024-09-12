@@ -13,9 +13,9 @@ var streams = {};
 	var server_cp = spawn('/mediamtx');
 	
 	// Output from the RTSP server
-	/*server_cp.stdout.on("data", data => {
+	server_cp.stdout.on("data", data => {
 		console.log(`mediamtx: ${data}`);
-	});*/
+	});
 
 	server_cp.stderr.on("data", data => {
 		console.log(`mediamtx stderr: ${data}`);
@@ -92,9 +92,9 @@ var streams = {};
 			console.log(`stdout dashstream${stream}: ${data}`);
 		});
 
-		/*streams[stream].ffmpeg_cp.stderr.on("data", data => {
+		streams[stream].ffmpeg_cp.stderr.on("data", data => {
 			console.log(`stderr dashstream${stream}: ${data}`);
-		});*/
+		});
 			
 		streams[stream].ffmpeg_cp.on('close', (code) => { delete streams[stream].ffmpeg_cp });
 		streams[stream].ffmpeg_cp.on('exit', (code) => { delete streams[stream].ffmpeg_cp });
